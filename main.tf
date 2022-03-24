@@ -25,11 +25,23 @@ module "iks-iwo" {
   # insert the 3 required variables here
 }
 
+data "intersight_kubernetes_cluster.kubeconfig" "kubeconfig" {
+  backend = "remote"
+  config = {
+   apikey    = var.apikey
+   secretkey = var.secretkey
+   cluster_name = var.cluster_name
+    }
+  }
+}  
+  
+  
 locals {
   # IKS Cluster Name
-  cluster_name = data.terraform_remote_state.kubeconfig.outputs.cluster_name
+  cluster_name = "new_cluster"
   # Kubernetes Configuration File
-  kubeconfig = yamldecode(data.terraform_remote_state.kubeconfig.outputs.kubeconfig)
+  kubeconfig = yamldecode(data.intersight_kubernetes_cluster.kubeconfig.results[0].kube_config)
+
 }
 
 #_____________________________________________________________________
