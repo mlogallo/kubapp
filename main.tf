@@ -3,6 +3,13 @@
 # Get Outputs from the kubeconfig Workspace
 #__________________________________________________________
 
+provider "intersight" {
+  apikey    = var.apikey
+  secretkey = var.secretkey
+  endpoint  = var.endpoint
+}
+
+
 data "terraform_remote_state" "kubeconfig" {
   backend = "remote"
   config = {
@@ -11,6 +18,15 @@ data "terraform_remote_state" "kubeconfig" {
       name = var.ws_kubeconfig
     }
   }
+}
+
+module "iks-iwo" {
+  source  = "terraform-cisco-modules/iks-iwo/intersight"
+  version = "1.0.6"
+  apikey    = var.apikey
+  secretkey = var.secretkey
+  cluster_name = var.cluster_name
+  # insert the 3 required variables here
 }
 
 locals {
