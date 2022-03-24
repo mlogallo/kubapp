@@ -34,9 +34,7 @@ data "terraform_remote_state" "kubeconfig" {
 
 data "intersight_kubernetes_cluster" "kubeconfig" {
 
-   apikey    = var.apikey
-   secretkey = var.secretkey
-   cluster_name = var.cluster_name
+
     
 }
 
