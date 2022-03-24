@@ -33,7 +33,7 @@ data "intersight_kubernetes_cluster.kubeconfig" "kubeconfig" {
    cluster_name = var.cluster_name
     }
   }
-}  
+
   
   
 locals {
