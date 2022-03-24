@@ -14,8 +14,6 @@ data "terraform_remote_state" "kubeconfig" {
 }
 
 
-
-
 module "iks-iwo" {
   source  = "terraform-cisco-modules/iks-iwo/intersight"
   version = "1.0.6"
@@ -32,7 +30,7 @@ data "intersight_kubernetes_cluster.kubeconfig" "kubeconfig" {
    secretkey = var.secretkey
    cluster_name = var.cluster_name
     }
-  }
+}
 
   
   
