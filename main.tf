@@ -3,7 +3,14 @@
 # Get Outputs from the kubeconfig Workspace
 #__________________________________________________________
 
-
+terraform {
+  required_providers {
+    intersight = {
+      source = "ciscodevnet/intersight"
+      version = "1.0.18"
+    }
+  }
+}
    
 provider "intersight" {
   apikey    = var.apikey
