@@ -44,7 +44,7 @@ locals {
   # IKS Cluster Name
   cluster_name = "new_cluster" 
   # Kubernetes Configuration File
-  kubeconfig = yamldecode(data.intersight_kubernetes_cluster.kubeconfig.results[0].kube_config)
+  kubeconfig = yamldecode(data.intersight_kubernetes_cluster.kubeconfig)
 
 }
 
