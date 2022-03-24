@@ -27,9 +27,6 @@ data "terraform_remote_state" "kubeconfig" {
 module "iks-iwo" {
   source  = "terraform-cisco-modules/iks-iwo/intersight"
   version = "1.0.6"
-    providers = {
-    aws = aws.usw2
-  }
   #apikey    = var.apikey
   #secretkey = var.secretkey
   #cluster_name = var.cluster_name
