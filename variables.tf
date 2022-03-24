@@ -20,3 +20,15 @@ variable "ws_kubeconfig" {
   description = "Intersight Kubernetes Service (IKS) kubeconfig Workspace Name.  The default value will be set to {cluster_name}_kubeconfig by the tfe variable module."
   type        = string
 }
+variable "apikey" {
+  type        = string
+  description = "API Key"
+}
+variable "secretkey" {
+  type        = string
+  description = "Secret Key or file location"
+}
+variable "cluster_name" {
+  type        = string
+  description = "Intersight Kubernetes Service Cluster Name"
+}
