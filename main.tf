@@ -42,9 +42,9 @@ data "intersight_kubernetes_cluster" "kubeconfig" {
   
 locals {
   # IKS Cluster Name
-  cluster_name = data.terraform_remote_state.kubeconfig.outputs.cluster_name
+  cluster_name = "new_cluster" 
   # Kubernetes Configuration File
-  kubeconfig = yamldecode(data.intersight_kubernetes_cluster.kubeconfig.results[0].kube_config)
+  kubeconfig = yamldecode(data.intersight_kubernetes_cluster.kubeconfig.results[1].kube_config)
 
 }
 
