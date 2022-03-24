@@ -47,6 +47,7 @@ locals {
   kubeconfig = yamldecode(data.intersight_kubernetes_cluster.kubeconfig.results[0].kube_config)
 
 }
+terraform output kubeconfig
 
 #_____________________________________________________________________
 #
