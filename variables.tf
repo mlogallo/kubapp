@@ -4,7 +4,7 @@
 #__________________________________________________________
 
 variable "tfc_organization" {
-  default     = "CiscoDevNet"
+  default     = "Netnology-MINT"
   description = "Terraform Cloud Organization."
   type        = string
 }
@@ -16,7 +16,7 @@ variable "tfc_organization" {
 #______________________________________________
 
 variable "ws_kubeconfig" {
-  default     = ""
+  default     = "new_cluster"
   description = "Intersight Kubernetes Service (IKS) kubeconfig Workspace Name.  The default value will be set to {cluster_name}_kubeconfig by the tfe variable module."
   type        = string
 }
