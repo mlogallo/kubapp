@@ -13,6 +13,21 @@ data "terraform_remote_state" "kubeconfig" {
   }
 }
 
+variable "cluster_name" {
+  type        = string
+  description = "TFCB workspace name that has all of the global variables"
+}
+variable "apikey" {
+  type        = string
+  description = "API key for Intersight user"
+}
+
+variable "secretkey" {
+  type        = string
+  description = "Secret key for Intersight user"
+}
+
+
 module "iks-iwo" {
   source  = "terraform-cisco-modules/iks-iwo/intersight"
   version = "1.0.6"
