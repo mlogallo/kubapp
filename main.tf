@@ -23,7 +23,7 @@ module "iks-iwo" {
   # insert the 3 required variables here
 }
 
-data "intersight_kubernetes_cluster_kubeconfig" "kubeconfig" {
+data "intersight_kubernetes_cluster" "kubeconfig" {
   backend = "remote"
   config = {
    apikey    = var.apikey
