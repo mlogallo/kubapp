@@ -3,6 +3,13 @@
 # Get Outputs from the kubeconfig Workspace
 #__________________________________________________________
 
+
+provider "intersight" {
+  apikey    = var.apikey
+  secretkey = var.secretkey
+  endpoint  = var.endpoint
+}
+
 data "terraform_remote_state" "kubeconfig" {
   backend = "remote"
   config = {
